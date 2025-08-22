@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to XCAMP</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        /* Additional styles to merge the designs */
+        .landing-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 100vh;
+        }
+
+        .brand-name {
+            font-family: 'Orbitron', sans-serif; /* Stylized font */
+            font-size: 5rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin: 0;
+            color: #000;
+        }
+
+        .tagline {
+            font-size: 0.8rem;
+            letter-spacing: 0.5em; /* Creates wide spacing */
+            text-transform: uppercase;
+            margin-bottom: 3rem; /* Increased margin to space out buttons */
+            color: #666;
+        }
+
+        /* Ensure buttons have some space between them */
+        .btn-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 0 2rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .brand-name {
+                font-size: 3.5rem;
+            }
+            .tagline {
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="landing-container">
+        <h1 class="brand-name">XCAMP</h1>
+        <p class="tagline">YOUR CAMPUS</p>
+
+        <div class="btn-container">
+            <a href="{{ url_for('signup') }}" class="btn">Sign Up</a>
+            <a href="{{ url_for('login') }}" class="btn btn-secondary">Log In</a>
+        </div>
+    </div>
+
+</body>
+</html>
